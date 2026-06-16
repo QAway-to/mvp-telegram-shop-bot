@@ -1,75 +1,41 @@
-# 🤖 Telegram Shop Bot MVP
+# mvp-telegram-shop-bot
 
-Демонстрационная версия Telegram бота для интернет-магазина с веб-интерфейсом.
+> Telegram shop bot UI — product catalog, cart management, and order flow as a Next.js web interface, mirroring the Telegram bot UX.
 
-## 🚀 Возможности
+A Next.js application that replicates the in-chat shopping experience in a browser. Users browse a product catalog, add items to cart, adjust quantities, and place orders. The order flow and bot command structure are designed to map 1-to-1 to a real Telegram Bot API integration.
 
-### ✅ Реализованный функционал (75% готовности)
+## Features
 
-- **📱 Веб-интерфейс магазина** - Каталог товаров, корзина, оформление заказов
-- **🤖 Имитация Telegram бота** - Демонстрация интерфейса и логики
-- **🛒 Полная корзина покупок** - Добавление, удаление, изменение количества
-- **📋 История заказов** - Просмотр оформленных заказов
-- **🎨 Современный дизайн** - Адаптивный интерфейс с Tailwind CSS
+- **Product catalog** — grid layout with images, descriptions, and prices
+- **Cart** — add, remove, and update quantities with running total
+- **Order history** — list of past orders with status and items breakdown
+- **Bot UI simulation** — chat-style interaction panels that mirror Telegram UX
+- **Responsive design** — Tailwind CSS layout that works on mobile and desktop
 
-### 🚀 Для полной версии (требует доплаты)
+## Tech Stack
 
-- **🔗 Реальная интеграция с Telegram API**
-- **💳 Платежные системы** (ЮKassa, Stripe, Robokassa)
-- **🚚 Служба доставки** (интеграция с СДЭК, Boxberry)
-- **📊 CRM и аналитика** - Отчеты продаж, управление товарами
-- **👥 Система лояльности** - Скидки, бонусы, персональные предложения
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 14 (Pages Router) |
+| Styling | Tailwind CSS |
+| State | React hooks |
+| Data | Mock JSON (catalog, orders) |
 
-## 🛠️ Технологии
-
-- **Next.js 14** - React фреймворк
-- **Tailwind CSS** - Стилизация
-- **React Hooks** - Управление состоянием
-- **Responsive Design** - Адаптивная верстка
-
-## 📦 Установка и запуск
+## Getting Started
 
 ```bash
-# Установка зависимостей
 npm install
-
-# Локальный запуск
-npm run dev
-
-# Сборка для продакшена
-npm run build
-npm start
+npm run dev   # http://localhost:3000
 ```
 
-## 🎯 Целевая аудитория
+## Connecting to Telegram
 
-- **Владельцы интернет-магазинов** - хотят автоматизировать продажи
-- **Фрилансеры** - ищут готовые решения для клиентов
-- **Бизнесы** - нуждаются в Telegram-ботах для обслуживания клиентов
+To wire up a real bot, replace the mock data layer with Telegram Bot API calls:
 
-## 💰 Ценообразование
+- `POST /bot{token}/sendMessage` for chat responses
+- `POST /bot{token}/answerCallbackQuery` for inline button actions
+- Webhook endpoint at `/api/telegram` (add to project)
 
-- **MVP (демо-версия)**: $50-100 (уже включено)
-- **Полная реализация**: $200-500
-  - Telegram API интеграция
-  - Платежные системы
-  - Система доставки
-  - Админ-панель
+## License
 
-## 📈 Преимущества для продаж
-
-1. **Наглядная демонстрация** - Заказчик видит работающий продукт
-2. **60-80% готовности** - Минимизирует риски для клиента
-3. **Быстрая поставка** - 1-2 дня на базовую версию
-4. **Масштабируемость** - Легко добавить новые функции
-
-## 🔒 Безопасность демо-версии
-
-- **Моковые данные** - Нет реальных платежей
-- **Локальное хранение** - Данные не сохраняются на сервере
-- **Watermark** - "DEMO VERSION" на всех страницах
-- **Ограниченный функционал** - Только демонстрация интерфейса
-
----
-
-**🚀 Сгенерировано AI Multi-Agent System**
+MIT
